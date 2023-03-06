@@ -2,54 +2,59 @@
 2021.06 - 2021.11
 
 ## Project Goal
-SKT¿¡¼­ °³¹ß ÁßÀÎ ½Ç³» ³×ºñ°ÔÀÌ¼Ç ¼­ºñ½º ³» Camera Pose Estimation ÆÄÀÌÇÁ¶óÀÎ Áß back-end modelÀÇ ¼º´É Çâ»ó¿¡ ±â¿©ÇÏ±â À§ÇÑ ÇÁ·ÎÁ§Æ®
+SKTì—ì„œ ê°œë°œ ì¤‘ì¸ ì‹¤ë‚´ ë„¤ë¹„ê²Œì´ì…˜ ì„œë¹„ìŠ¤ ë‚´ Camera Pose Estimation íŒŒì´í”„ë¼ì¸ ì¤‘ back-end modelì˜ ì„±ëŠ¥ í–¥ìƒì— ê¸°ì—¬í•˜ê¸° ìœ„í•œ í”„ë¡œì íŠ¸
 
-#### Stack
+## Stack
 Python, Pytorch, Docker
 
-#### WorkFlow
+## WorkFlow
 
-##### 1) 2D-3D Point matching
-###### ÇÁ·ÎÁ§Æ® °³¿ä
-¼­¹ö·Î µé¾î¿Â ÀÌ¹ÌÁöÀÇ 2D Æ¯Â¡Á¡°ú DB³» 3D Æ¯Â¡Á¡ÀÇ pair¸¦ ¸¸µå´Â µö·¯´× ¾Ë°í¸®Áò °³¹ß ÇÁ·ÎÁ§Æ®
+### 1) 2D-3D Point matching
+##### í”„ë¡œì íŠ¸ ê°œìš”
+ì„œë²„ë¡œ ë“¤ì–´ì˜¨ ì´ë¯¸ì§€ì˜ 2D íŠ¹ì§•ì ê³¼ DBë‚´ 3D íŠ¹ì§•ì ì˜ pairë¥¼ ë§Œë“œëŠ” ë”¥ëŸ¬ë‹ ì•Œê³ ë¦¬ì¦˜ ê°œë°œ í”„ë¡œì íŠ¸
 
-###### Data
-- 2D Æ¯Â¡Á¡ÀÇ location°ú descriptor
-- 3D Æ¯Â¡Á¡ÀÇ location°ú descriptor
-=> 2D Æ¯Â¡Á¡°ú 3D Æ¯Â¡Á¡ÀÇ match Á¤º¸¸¦ ¹ÝÈ¯
+##### Data
+- 2D íŠ¹ì§•ì ì˜ locationê³¼ descriptor
+- 3D íŠ¹ì§•ì ì˜ locationê³¼ descriptor
+=> 2D íŠ¹ì§•ì ê³¼ 3D íŠ¹ì§•ì ì˜ match ì •ë³´ë¥¼ ë°˜í™˜
 
-###### Model
-- GNN ±â¹ÝÀÇ 2D-2D matching ¸ðµ¨ÀÎ SuperGlue ±¸Á¶¸¦ 2D-3D ¸ðµ¨¿¡ ¸Â°Ô »õ·Ó°Ô º¯Çü
-- 1) 3D Point ÀüÃ³¸® ½ÇÇà
-- 2) Keypoint Encoder ¼öÁ¤ :  2D Æ¯Â¡Á¡ÀÇ (x, y)¸¦ embeddingÇÏ´Â encoder¿Í 3D Æ¯Â¡Á¡ÀÇ (x, y, z)¸¦ embeddingÇÏ´Â encoder¸¦ °¢°¢ »ç¿ë
-- 3) Score Normalization ¼öÁ¤ : (±âÁ¸) Sinkhorn Iteration -> (º¯°æ ÈÄ)Softmax 
+##### Model
+- GNN ê¸°ë°˜ì˜ 2D-2D matching ëª¨ë¸ì¸ SuperGlue êµ¬ì¡°ë¥¼ 2D-3D ëª¨ë¸ì— ë§žê²Œ ìƒˆë¡­ê²Œ ë³€í˜•
+- 1) 3D Point ì „ì²˜ë¦¬ ì‹¤í–‰
+- 2) Keypoint Encoder ìˆ˜ì • :  2D íŠ¹ì§•ì ì˜ (x, y)ë¥¼ embeddingí•˜ëŠ” encoderì™€ 3D íŠ¹ì§•ì ì˜ (x, y, z)ë¥¼ embeddingí•˜ëŠ” encoderë¥¼ ê°ê° ì‚¬ìš©
+- 3) Score Normalization ìˆ˜ì • : (ê¸°ì¡´) Sinkhorn Iteration -> (ë³€ê²½ í›„) Softmax 
 
-###### Result
-- filtering Àû¿ëÀ¸·Î ¼º´É Çâ»óÀ» º¸ÀÓÀ¸·Î½á, filtering ´Ü°èÀÇ È¿°ú¸¦ ÀÔÁõ
-- ¸ðµ¨ ¼º´ÉÀ» **±âÁ¸ KNN ´ëºñ 20~70%** Çâ»ó
-- ±âÁ¸ KNN´Â ¸ðµç 2D Æ¯Â¡Á¡¿¡ ´ëÇØ matchingµÈ °á°ú¸¸À» ¹ÝÈ¯ÇÔ. ±×¿¡ ºñÇØ º» ¿¬±¸ÀÇ modelÀº matchingÀÌ µÇÁö ¾Ê´Â °æ¿ì±îÁö ¿¹ÃøÇÏ±â ¶§¹®¿¡, outlierÀ» Á¦°ÅÇÒ ¼ö ÀÖ´Ù´Â Å« contributionÀ» °¡Áü
-- ´ë»ó ¼ö¿©
-- ¸ðµ¨ °æ·®È­ ÀÌÈÄ **½ÇÁ¦ ¼­ºñ½º¿¡ Àû¿ë ¿¹Á¤**
+##### Result
+- filtering ì ìš©ìœ¼ë¡œ ì„±ëŠ¥ í–¥ìƒì„ ë³´ìž„ìœ¼ë¡œì¨, filtering ë‹¨ê³„ì˜ íš¨ê³¼ë¥¼ ìž…ì¦
+- ëª¨ë¸ ì„±ëŠ¥ì„ **ê¸°ì¡´ KNN ëŒ€ë¹„ 20~70%** í–¥ìƒ
+- ê¸°ì¡´ KNNëŠ” ëª¨ë“  2D íŠ¹ì§•ì ì— ëŒ€í•´ matchingëœ ê²°ê³¼ë§Œì„ ë°˜í™˜í•¨. ê·¸ì— ë¹„í•´ ë³¸ ì—°êµ¬ì˜ modelì€ matchingì´ ë˜ì§€ ì•ŠëŠ” ê²½ìš°ê¹Œì§€ ì˜ˆì¸¡í•˜ê¸° ë•Œë¬¸ì—, outlierì„ ì œê±°í•  ìˆ˜ ìžˆë‹¤ëŠ” í° contributionì„ ê°€ì§
+- ëŒ€ìƒ ìˆ˜ì—¬
+- ëª¨ë¸ ê²½ëŸ‰í™” ì´í›„ **ì‹¤ì œ ì„œë¹„ìŠ¤ì— ì ìš© ì˜ˆì •**
 
-##### 2) Panel Detection
-###### ÇÁ·ÎÁ§Æ® °³¿ä
-ºñ½ÁÇÑ ±¤°íÆÇÀÌ ºÎÁ¤È®ÇÑ ÈÄº¸±º ÃßÃâÀ» ÀÏÀ¸ÄÑ Æ¯Â¡Á¡ matchingÀÇ Á¤È®µµ¸¦ ÀúÇÏÇÏ±â¿¡, ±¤°íÆÇ ¿µ¿ªÀ» ½Ç½Ã°£À¸·Î °ËÃâ ¹× Á¦°ÅÇÏ´Â ÇÁ·ÎÁ§Æ®
+<br/>
+<br/>
 
-###### Data
-- Panel Dataset(512x512, 5884Àå)
-- Synthetic Dataset(640x640, 23,536Àå)
-    -> 2°³ÀÇ COCO data¸¦ È°¿ë
-    -> ¹è°æ ÀÌ¹ÌÁö¿¡ ´Ù¸¥ ÇÑÀåÀÇ ÀÌ¹ÌÁö¸¦ »ðÀÔÇÒ ¶§, **½ÃÁ¡, À§Ä¡, È¸ÀüÀ» ·£´ý**ÇÏ°Ô Àû¿ë
+### 2) Panel Detection
+##### í”„ë¡œì íŠ¸ ê°œìš”
+ë¹„ìŠ·í•œ ê´‘ê³ íŒì´ ë¶€ì •í™•í•œ í›„ë³´êµ° ì¶”ì¶œì„ ì¼ìœ¼ì¼œ íŠ¹ì§•ì  matchingì˜ ì •í™•ë„ë¥¼ ì €í•˜í•˜ê¸°ì—, ê´‘ê³ íŒ ì˜ì—­ì„ ì‹¤ì‹œê°„ìœ¼ë¡œ ê²€ì¶œ ë° ì œê±°í•˜ëŠ” í”„ë¡œì íŠ¸
 
-###### Model
-»ç°¢Çü ÇüÅÂÀÇ °£ÆÇ ¿µ¿ª¸¸À» Å½ÁöÇÒ ¼ö ÀÖµµ·Ï Pytorch¸¦ È°¿ëÇÏ¿© YOLOv5 ±â¹Ý °£ÆÇ Point(²ÀÁþÁ¡) Detection ¸ðµ¨ °³¹ß
+##### Data
+- Panel Dataset(512x512, 5884ìž¥)
+- Synthetic Dataset(640x640, 23,536ìž¥)
+    -> 2ê°œì˜ COCO dataë¥¼ í™œìš©
+    -> ë°°ê²½ ì´ë¯¸ì§€ì— ë‹¤ë¥¸ í•œìž¥ì˜ ì´ë¯¸ì§€ë¥¼ ì‚½ìž…í•  ë•Œ, **ì‹œì , ìœ„ì¹˜, íšŒì „ì„ ëžœë¤**í•˜ê²Œ ì ìš©
 
-###### Result
-- inference timeÀÌ 50fps·Î real-timeÀÌ °¡´ÉÇÑ ¸ðµ¨ °³¹ß
-- °ËÃâ·ü 97% ´Þ¼º
-- mAP@.5:.95 0.979 ´Þ¼º
-- ´ë»ó ¼ö¿©
-- SKT¿¡¼­ º¸À¯ÇÏ°í ÀÖ´Â ÁöÇÏÃ¶¿ª µ¥ÀÌÅÍ¿¡ ´ëÇØ ¿ì¼öÇÑ ¼º´ÉÀ» È®ÀÎÇÏ¿© **½ÇÁ¦ ¼­ºñ½º¿¡ Àû¿ë ¿¹Á¤**
+##### Model
+ì‚¬ê°í˜• í˜•íƒœì˜ ê°„íŒ ì˜ì—­ë§Œì„ íƒì§€í•  ìˆ˜ ìžˆë„ë¡ Pytorchë¥¼ í™œìš©í•˜ì—¬ YOLOv5 ê¸°ë°˜ ê°„íŒ Point(ê¼­ì§“ì ) Detection ëª¨ë¸ ê°œë°œ
+
+##### Result
+- inference timeì´ 50fpsë¡œ real-timeì´ ê°€ëŠ¥í•œ ëª¨ë¸ ê°œë°œ
+- ê²€ì¶œë¥  97% ë‹¬ì„±
+- mAP@.5:.95 0.979 ë‹¬ì„±
+- ëŒ€ìƒ ìˆ˜ì—¬
+- SKTì—ì„œ ë³´ìœ í•˜ê³  ìžˆëŠ” ì§€í•˜ì² ì—­ ë°ì´í„°ì— ëŒ€í•´ ìš°ìˆ˜í•œ ì„±ëŠ¥ì„ í™•ì¸í•˜ì—¬ **ì‹¤ì œ ì„œë¹„ìŠ¤ì— ì ìš© ì˜ˆì •**
+
+<br/>
 
 <img src="https://user-images.githubusercontent.com/77380514/223083252-98e79a8f-9b95-414b-9683-1a73783704d6.jpg" width="50%" height="300"></img><img src="https://user-images.githubusercontent.com/77380514/223083269-37b8a8fb-5cd5-4992-899a-719534fec957.jpg" width="50%" height="300"></img>
 <img src="https://user-images.githubusercontent.com/77380514/223083276-b4168405-c43f-4f02-9a3f-c6db72cb7c33.jpg" width="50%" height="300"></img><img src="https://user-images.githubusercontent.com/77380514/223083306-3d96ea47-0a17-47a2-a239-6a087301a61a.jpg" width="50%" height="300"></img>
