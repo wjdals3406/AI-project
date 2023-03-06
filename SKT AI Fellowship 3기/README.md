@@ -22,7 +22,7 @@ Python, Pytorch, Docker
 - GNN 기반의 2D-2D matching 모델인 SuperGlue 구조를 2D-3D 모델에 맞게 새롭게 변형
 - 1) 3D Point 전처리 실행
 - 2) Keypoint Encoder 수정 :  2D 특징점의 (x, y)를 embedding하는 encoder와 3D 특징점의 (x, y, z)를 embedding하는 encoder를 각각 사용
-- 3) Score Normalization 수정 : (기존) Sinkhorn Iteration -> (변경 후)Softmax 
+- 3) Score Normalization 수정 : (기존) Sinkhorn Iteration -> (변경 후) Softmax 
 
 ##### Result
 - filtering 적용으로 성능 향상을 보임으로써, filtering 단계의 효과를 입증
@@ -53,6 +53,8 @@ Python, Pytorch, Docker
 - mAP@.5:.95 0.979 달성
 - 대상 수여
 - SKT에서 보유하고 있는 지하철역 데이터에 대해 우수한 성능을 확인하여 **실제 서비스에 적용 예정**
+
+<br/>
 
 <img src="https://user-images.githubusercontent.com/77380514/223083252-98e79a8f-9b95-414b-9683-1a73783704d6.jpg" width="50%" height="300"></img><img src="https://user-images.githubusercontent.com/77380514/223083269-37b8a8fb-5cd5-4992-899a-719534fec957.jpg" width="50%" height="300"></img>
 <img src="https://user-images.githubusercontent.com/77380514/223083276-b4168405-c43f-4f02-9a3f-c6db72cb7c33.jpg" width="50%" height="300"></img><img src="https://user-images.githubusercontent.com/77380514/223083306-3d96ea47-0a17-47a2-a239-6a087301a61a.jpg" width="50%" height="300"></img>
