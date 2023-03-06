@@ -1,21 +1,21 @@
-# AIì•¼,ì§„ì§œ ë‰´ìŠ¤ë¥¼ ì°¾ì•„ì¤˜!
+# AI¾ß,ÁøÂ¥ ´º½º¸¦ Ã£¾ÆÁà!
 
-#### ëŒ€íšŒ ê°œìš”
-ê´‘ê³ ì„± ë‚´ìš©ì˜ ê°€ì§œ ë‰´ìŠ¤ ì´ì§„ ë¶„ë¥˜ AI ëŒ€íšŒ
+#### ´ëÈ¸ °³¿ä
+±¤°í¼º ³»¿ëÀÇ °¡Â¥ ´º½º ÀÌÁø ºÐ·ù AI ´ëÈ¸
 
 #### Stack
 Python, TensorFlow
 
 #### WorkFlow
-- ë‰´ìŠ¤ì˜ ì œëª©, ë³¸ë¬¸ ë‚´ìš©ì´ ë‹´ê¸´ í…ìŠ¤íŠ¸ ë°ì´í„°, ê¸°ì‚¬ ë‚´ ìˆœì„œì™€ ë‚ ì§œ ë“±ì´ ë‹´ê¸´ ì •í˜• ë°ì´í„° í™œìš©
-- ì •í˜• ë³€ìˆ˜ëŠ” ì •í™•ë„ í–¥ìƒì— ê¸°ì—¬í•˜ëŠ” ê²ƒì„ í™•ì¸í•˜ë©° ì´ 3ê°€ì§€ ì¢…ë¥˜ì˜ ë³€ìˆ˜ ìƒì„±(í…ìŠ¤íŠ¸ ê´€ë ¨í•œ ë³€ìˆ˜, ë¬¸ë²•ì  íŠ¹ì§•ì„ ê³ ë ¤í•œ ë³€ìˆ˜, ì •í˜• ë°ì´í„° column ë³€ìˆ˜ë¥¼ ì´ìš©í•œ ë³€ìˆ˜)
-- í…ìŠ¤íŠ¸ì˜ ê¸¸ì´, ë‰´ìŠ¤ì˜ ì œëª©ê³¼ ë‚´ìš© ê°„ì˜ ìœ ì‚¬ë„, Mecab tagsetì„ í™œìš©í•œ í˜•íƒœì†Œ feature ë“±(ìˆ˜ì‚¬,íŠ¹ìˆ˜ê¸°í˜¸ ë“±ì˜ ë¬¸ë²•ì  íŠ¹ì§•ì„ í™œìš©) íŒŒìƒ ë³€ìˆ˜ë¡œ 13ê°œ ìƒì„±
-- â€˜ëŒ€ë°•â€™, â€˜ë”°ìƒì£¼â€™ ë“± ê°€ì§œ ë‰´ìŠ¤ì˜ í•µì‹¬ ë‹¨ì–´ë¥¼ ë°œê²¬í•˜ì—¬, ë‹¨ì–´ë¥¼ ìž„ë² ë”©í•œ LSTMê³¼ â€˜ë”°ìƒì£¼â€™ ë° ì‹ ì¡°ì–´ì— ê°•í•œ Character CNN ì‚¬ìš©
-- **Character CNN, LSTMê³¼ íŒŒìƒ ë³€ìˆ˜**ë¥¼ í™œìš©í•œ **ìƒˆë¡œìš´ Multimodal ìžì²´ ê°œë°œ**
+- ´º½ºÀÇ Á¦¸ñ, º»¹® ³»¿ëÀÌ ´ã±ä ÅØ½ºÆ® µ¥ÀÌÅÍ, ±â»ç ³» ¼ø¼­¿Í ³¯Â¥ µîÀÌ ´ã±ä Á¤Çü µ¥ÀÌÅÍ È°¿ë
+- Á¤Çü º¯¼ö´Â Á¤È®µµ Çâ»ó¿¡ ±â¿©ÇÏ´Â °ÍÀ» È®ÀÎÇÏ¸ç ÃÑ 3°¡Áö Á¾·ùÀÇ º¯¼ö »ý¼º(ÅØ½ºÆ® °ü·ÃÇÑ º¯¼ö, ¹®¹ýÀû Æ¯Â¡À» °í·ÁÇÑ º¯¼ö, Á¤Çü µ¥ÀÌÅÍ column º¯¼ö¸¦ ÀÌ¿ëÇÑ º¯¼ö)
+- ÅØ½ºÆ®ÀÇ ±æÀÌ, ´º½ºÀÇ Á¦¸ñ°ú ³»¿ë °£ÀÇ À¯»çµµ, Mecab tagsetÀ» È°¿ëÇÑ ÇüÅÂ¼Ò feature µî(¼ö»ç,Æ¯¼ö±âÈ£ µîÀÇ ¹®¹ýÀû Æ¯Â¡À» È°¿ë) ÆÄ»ý º¯¼ö·Î 13°³ »ý¼º
+- ¡®´ë¹Ú¡¯, ¡®µû»óÁÖ¡¯ µî °¡Â¥ ´º½ºÀÇ ÇÙ½É ´Ü¾î¸¦ ¹ß°ßÇÏ¿©, ´Ü¾î¸¦ ÀÓº£µùÇÑ LSTM°ú ¡®µû»óÁÖ¡¯ ¹× ½ÅÁ¶¾î¿¡ °­ÇÑ Character CNN »ç¿ë
+- **Character CNN, LSTM°ú ÆÄ»ý º¯¼ö**¸¦ È°¿ëÇÑ **»õ·Î¿î Multimodal ÀÚÃ¼ °³¹ß**
 
 ### Result
-- **ì •í™•ë„** **98.74%, inference time 0.119ms** ë‹¬ì„±
-- **AIë¶€ë¬¸ 192íŒ€ ì¤‘** **1ìœ„**
+- **Á¤È®µµ** **98.74%, inference time 0.119ms** ´Þ¼º
+- **AIºÎ¹® 192ÆÀ Áß** **1À§**
 
 <img src="https://user-images.githubusercontent.com/77380514/223071573-9fa10730-15f3-4098-8b59-d38860452b63.jpg" width="50%" height="300"></img><img src="https://user-images.githubusercontent.com/77380514/223071746-1e747196-9fc9-44d7-b4de-8cce0fa46b97.jpg" width="50%" height="300"></img>
 <img src="https://user-images.githubusercontent.com/77380514/223071764-7f132e06-df98-4310-a03c-89c5be6b95e5.jpg" width="50%" height="300"></img><img src="https://user-images.githubusercontent.com/77380514/223071771-8eae1288-f73a-4fd8-8721-8bd0929bc49c.jpg" width="50%" height="300"></img>
