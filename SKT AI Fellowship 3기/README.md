@@ -33,6 +33,7 @@ Python, Pytorch, Docker
 
 <br/>
 <br/>
+
 ### 2) Panel Detection
 ##### 프로젝트 개요
 비슷한 광고판이 부정확한 후보군 추출을 일으켜 특징점 matching의 정확도를 저하하기에, 광고판 영역을 실시간으로 검출 및 제거하는 프로젝트
