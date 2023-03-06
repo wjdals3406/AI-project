@@ -1,20 +1,20 @@
-# ÇØ¿ÜÁÖ½Ä ¸®Æ÷Æ® Å°¿öµå ÃßÃâ ÅÂ±ë ¸ðµ¨ °³¹ß
+# í•´ì™¸ì£¼ì‹ ë¦¬í¬íŠ¸ í‚¤ì›Œë“œ ì¶”ì¶œ íƒœê¹… ëª¨ë¸ ê°œë°œ
 2021.08 - 2021.08
 
 #### About Project
-ÁÖ½Ä ¾îÇÃ¿¡ ÁÖ½Ä Á¾¸ñÀ» ÀÔ·ÂÇÏ¸é °ü·Ã Å°¿öµå°¡ ³ª¿À´Â ¼­ºñ½º Å¾Àç¸¦ À§ÇØ, ¼öÀÛ¾÷À¸·Î Å°¿öµå¸¦ ÃßÃâÇÏ°í ÀÖ´ø °ÍÀ» ÀÚµ¿È­ÇÏ´Â ¾÷¹«
+ì£¼ì‹ ì–´í”Œì— ì£¼ì‹ ì¢…ëª©ì„ ìž…ë ¥í•˜ë©´ ê´€ë ¨ í‚¤ì›Œë“œê°€ ë‚˜ì˜¤ëŠ” ì„œë¹„ìŠ¤ íƒ‘ìž¬ë¥¼ ìœ„í•´, ìˆ˜ìž‘ì—…ìœ¼ë¡œ í‚¤ì›Œë“œë¥¼ ì¶”ì¶œí•˜ê³  ìžˆë˜ ê²ƒì„ ìžë™í™”í•˜ëŠ” ì—…ë¬´
 
 #### Stack
 Python
 
 #### WorkFlow
-- Æ¼Ä¿(Ticker) ÀÔ·Â ½Ã ÇØ´ç Á¾¸ñÀÇ Å°¿öµå ÃßÃâ ÀÚµ¿È­ ¹× ½Ã°¢È­ ÁøÇà
-- ºÒ¿ë¾î Á¦°Å ÈÄ Mecab ÇüÅÂ¼Ò ºÐ¼®±â·Î ¸í»ç ÃßÃâ
-- Counter¿Í TF-IDF¿¡ ´ëÇØ ºóµµ¼ö°¡ ³ôÀº ´Ü¾î¸¦ Å°¿öµå·Î ¼±Á¤
-- ´Ù¼öÀÇ ´Ü¾î·Î Å°¿öµå°¡ ºÐ¸®µÇ¾î ³ª¿À´Â ¹®Á¦¸¦ »ç¿ëÀÚ »çÀü Ãß°¡, N-gram(n¡Â3)À» Àû¿ëÇÏ¿© ÇØ°á
+- í‹°ì»¤(Ticker) ìž…ë ¥ ì‹œ í•´ë‹¹ ì¢…ëª©ì˜ í‚¤ì›Œë“œ ì¶”ì¶œ ìžë™í™” ë° ì‹œê°í™” ì§„í–‰
+- ë¶ˆìš©ì–´ ì œê±° í›„ Mecab í˜•íƒœì†Œ ë¶„ì„ê¸°ë¡œ ëª…ì‚¬ ì¶”ì¶œ
+- Counterì™€ TF-IDFì— ëŒ€í•´ ë¹ˆë„ìˆ˜ê°€ ë†’ì€ ë‹¨ì–´ë¥¼ í‚¤ì›Œë“œë¡œ ì„ ì •
+- ë‹¤ìˆ˜ì˜ ë‹¨ì–´ë¡œ í‚¤ì›Œë“œê°€ ë¶„ë¦¬ë˜ì–´ ë‚˜ì˜¤ëŠ” ë¬¸ì œë¥¼ ì‚¬ìš©ìž ì‚¬ì „ ì¶”ê°€, N-gram(nâ‰¤3)ì„ ì ìš©í•˜ì—¬ í•´ê²°
 
-### Result
-- Å°¿öµå ÃßÃâ ½Ã°£ ¾à 120ÃÊ¿¡¼­ ¾à 0.1ÃÊ·Î ½ÇÇà ¼Óµµ ´ÜÃà
-- ÇöÁ÷ÀÚºÐµéÀÇ ÁÁÀº Æò°¡¸¦ ¹Þ¾Æ, ÇØ´ç ¸ðµ¨Àº ½ÇÁ¦ Çö¾÷¿¡¼­ °³¹ßÀ» ±¸Ã¼È­ Áß
+#### Result
+- í‚¤ì›Œë“œ ì¶”ì¶œ ì‹œê°„ ì•½ 120ì´ˆì—ì„œ ì•½ 0.1ì´ˆë¡œ ì‹¤í–‰ ì†ë„ ë‹¨ì¶•
+- í˜„ì§ìžë¶„ë“¤ì˜ ì¢‹ì€ í‰ê°€ë¥¼ ë°›ì•„, í•´ë‹¹ ëª¨ë¸ì€ ì‹¤ì œ í˜„ì—…ì—ì„œ ê°œë°œì„ êµ¬ì²´í™” ì¤‘
 
 <img src="https://user-images.githubusercontent.com/77380514/223089939-3c32494f-8c90-4fd3-a50e-4b2485b2e1ce.jpg" width="50%" height="300"></img><img src="https://user-images.githubusercontent.com/77380514/223089961-9a72f774-133d-49d7-b66b-97f6d54f757d.jpg" width="50%" height="300"></img>
